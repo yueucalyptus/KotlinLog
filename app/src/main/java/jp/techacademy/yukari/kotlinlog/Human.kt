@@ -2,26 +2,24 @@ package jp.techacademy.yukari.kotlinlog
 
 import android.util.Log
 
-const val MY_TAG = "kotlintest"
+class Human : Animal, Thinkable {
 
-open class Human: Animal, Thinkable {
+     var hobby: String
 
-    constructor(name: String, age: Int, hobby: String): super(name, age, hobby){
+    constructor(name:String, age: Int, hobby: String) : super(name, age) {
+    this.hobby = hobby
     }
+
     override fun say() {
-     //   var name:String
-     //   var age:Int
-        Log.d("kotlintest", "私の名前は" + this.name + "です。")
-        Log.d("kotlintest", "年は" + this.age + "歳です。")
-    }
+        //  var name: String
+        // var age: Int
 
-    fun MyTag(): String{
-        return "[" + MY_TAG + "]"
-    }
+            Log.d("kotlintest", "私の名前は" + this.name + "です。")
+            Log.d("kotlintest", "年は" + this.age + "歳です。")
+        }
 
 
-    override fun think(){
-      //  var hobby: String
-        Log.d("kotlintest", "私は" + this.hobby + "について考える")
+    override fun think() {
+            Log.d("kotlintest", "私は" + this.hobby + "について考える")
+        }
     }
-}
